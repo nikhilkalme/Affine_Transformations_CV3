@@ -34,7 +34,7 @@ if image is not None:
             elif transformation == "Scaling":
                 scaling_factor = st.slider("Scaling Factor", 0.1, 2.0, 1.0, step=0.1)
                 scaling_matrix = np.float32([[scaling_factor, 0, 0], [0, scaling_factor, 0]])
-                transformed_image = cv2.warpAffine(image, scaling_matrix, (300, 300))
+                transformed_image = cv2.warpAffine(image, scaling_matrix, (image.shape[1], image.shape[0]))
 
             elif transformation == "Shearing":
                 shear_factor = st.slider("Shear Factor", -1.0, 1.0, 0.0, step=0.1)
